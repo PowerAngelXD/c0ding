@@ -2,30 +2,27 @@ package model
 
 import "time"
 
-type Statistics struct {
-	Likes uint
-	Views uint
-}
-
 type Comment struct {
-	Index    uint
-	UserName string
-	UserID   uint
+	Index    uint   `json:"index" gorm:"primaryKey"`
+	UserName string `json:"userName"`
+	UserID   uint   `json:"userId"`
 
-	Content string
+	Content string `json:"content"`
 
-	Stats Statistics
+	Likes uint `json:"likes"`
+	Views uint `json:"views"`
 }
 
 type Reply struct {
-	Index     uint
-	CommentID uint
-	UserName  string
-	UserID    uint
+	Index     uint   `json:"index" gorm:"primaryKey"`
+	CommentID uint   `json:"commentId"`
+	UserName  string `json:"userName"`
+	UserID    uint   `json:"userId"`
 
 	Content string
 
-	Stats Statistics
+	Likes uint
+	Views uint
 }
 
 type Post struct {
@@ -37,5 +34,6 @@ type Post struct {
 
 	Content string
 
-	Stats Statistics
+	Likes uint
+	Views uint
 }
