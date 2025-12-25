@@ -8,14 +8,24 @@ type Statistics struct {
 }
 
 type Comment struct {
+	Index    uint
 	UserName string
 	UserID   uint
 
 	Content string
 
 	Stats Statistics
+}
 
-	Replies []Comment
+type Reply struct {
+	Index     uint
+	CommentID uint
+	UserName  string
+	UserID    uint
+
+	Content string
+
+	Stats Statistics
 }
 
 type Post struct {
@@ -25,10 +35,7 @@ type Post struct {
 	PostTime   time.Time
 	UpdateTime time.Time
 
-	Content      string
-	ResourceURLs []string
+	Content string
 
 	Stats Statistics
-
-	Comments []Comment
 }
