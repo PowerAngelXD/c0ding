@@ -19,21 +19,21 @@ type Reply struct {
 	UserName  string `json:"userName"`
 	UserID    uint   `json:"userId"`
 
-	Content string
+	Content string `json:"content"`
 
-	Likes uint
-	Views uint
+	Likes uint `json:"likes"`
+	Views uint `json:"views"`
 }
 
 type Post struct {
-	PostID     uint
-	AuthorName string
-	AuthorID   uint
-	PostTime   time.Time
-	UpdateTime time.Time
+	PostID     uint      `json:"postId" gorm:"primaryKey"`
+	AuthorName string    `json:"authorName"`
+	AuthorID   uint      `json:"authorId"`
+	PostTime   time.Time `json:"postTime"`
+	UpdateTime time.Time `json:"updateTime"`
 
-	Content string
+	Content string `json:"content"`
 
-	Likes uint
-	Views uint
+	Likes uint `json:"likes"`
+	Views uint `json:"views"`
 }
