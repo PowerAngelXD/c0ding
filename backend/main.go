@@ -1,8 +1,8 @@
 package main
 
 import (
+	"c0ding-backend/router"
 	"log"
-	"service/router"
 
 	"github.com/gin-gonic/gin"
 )
