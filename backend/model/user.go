@@ -15,8 +15,20 @@ type User struct {
 	RecvSubscription uint
 }
 
-type LikeChain struct {
-	Index  uint
+type Like struct {
+	// 主键索引
+	Index uint
+	// 用户ID
 	UserID uint
+	// 被点赞的帖子ID
+	PostID uint
+}
+
+type View struct {
+	// 主键索引
+	Index uint
+	// 用户ID
+	UserID uint
+	// 被浏览的帖子ID
 	PostID uint
 }
